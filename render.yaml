@@ -2,6 +2,7 @@ services:
   - type: web
     name: comms-platform
     env: python
+    pythonVersion: "3.11.8"
     plan: free
     buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput"
     startCommand: "gunicorn comms_platform.wsgi:application --bind 0.0.0.0:$PORT"
