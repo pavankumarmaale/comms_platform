@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-s$%drt74(j02wyzb&58_e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(' ')
 
 
 # Application definition
@@ -152,8 +152,6 @@ SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
-# Allowed hosts for deployment
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'your-domain.com', '*.your-domain.com']
 
 # Email configuration (for development - uses console)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
